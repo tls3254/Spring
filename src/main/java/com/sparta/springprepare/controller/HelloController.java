@@ -1,13 +1,36 @@
 package com.sparta.springprepare.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
+@RequestMapping("/api")
 public class HelloController {
 
-    @GetMapping("/api/hello")
+    @GetMapping("/hello")
+    @ResponseBody
     public String hello(){
         return "Hello world!";
+    }
+    @GetMapping("/get")
+    @ResponseBody
+    public String get(){
+        return "get method 요청";
+    }
+    @PostMapping("/post")
+    @ResponseBody
+    public String post(){
+        return "post method 요청";
+    }
+
+    @PutMapping("/put")
+    @ResponseBody
+    public String put(){
+        return "Put method 요청";
+    }
+    @DeleteMapping("/delete")
+    @ResponseBody
+    public String delete(){
+        return "delete method 요청";
     }
 }
